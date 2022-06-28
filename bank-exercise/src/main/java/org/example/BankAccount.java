@@ -3,15 +3,26 @@ package org.example;
 public class BankAccount {
 
     //Fields
-    private String accountNumber;
+
+    private static int accountNumberSequencer = 630_000_000;
+
+    private int accountNumber;
     private double balance;
     private String customerName;
     private String email;
     private String phoneNumber;
 
     //constructor
-    public BankAccount(String accountNumber, double balance, String customerName, String email, String phoneNumber){
+    public BankAccount(int accountNumber, double balance, String customerName, String email, String phoneNumber){
         this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public BankAccount(double balance, String customerName, String email, String phoneNumber) {
+        this.accountNumber = ++accountNumberSequencer;
         this.balance = balance;
         this.customerName = customerName;
         this.email = email;
@@ -20,7 +31,7 @@ public class BankAccount {
 
     //Getters & Setters
 
-    public String getAccountNumber(){
+    public int getAccountNumber(){
         return accountNumber;
     }
     public double getBalance(){
@@ -38,7 +49,7 @@ public class BankAccount {
 
 
 
-    public void setAccountNumber(String accountNumber){
+    public void setAccountNumber(int accountNumber){
         this.accountNumber = accountNumber;
     }
     public void setBalance(double balance){
@@ -57,7 +68,7 @@ public class BankAccount {
 
     //Method for get information
     public String getInformation(){
-        return ("The account number is: " + getAccountNumber() + " With the amount: " + getBalance() + " Kr " + " customer name is: " + getCustomerName() + " Address email is: " + getEmail() + " and phone number is: " + getPhoneNumber());
+        return ("The account number is: " + getAccountNumber() + " With the account balance: " + getBalance() + " Kr " + " customer name is: " + getCustomerName() + " Address email is: " + getEmail() + " and phone number is: " + getPhoneNumber());
     }
 
     //Method for deposit
@@ -78,9 +89,5 @@ public class BankAccount {
         }
         return balance;
     }
-
-
-
-
 
 }

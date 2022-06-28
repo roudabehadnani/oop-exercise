@@ -5,12 +5,21 @@ public class Main {
 
         //instantiating
 
-        BankAccount roudabeh = new BankAccount("6323-954-1086", 100160.56, "Roudabeh Adnani", "rodabeh.adnani@gmail.com", "0764359935" );
-        System.out.println(roudabeh.getInformation());
+        BankAccount roudabehFirstAccount = new BankAccount(630_000_000, 1001500.51, "Roudabeh Adnani", "rodabeh.adnani@gmail.com", "0769826471" );
+        System.out.println(roudabehFirstAccount.getInformation());
+        System.out.println("The firs account number is: " + roudabehFirstAccount.getAccountNumber());
 
 
-        System.out.println("New balance after deposit: " + roudabeh.deposit(8000));
-        System.out.println("New balance after withdraw: " + roudabeh.withDraw(5000));
+        BankAccount roudabehSecondAccount = new BankAccount(1001500.51, "Roudabeh Adnani", "rodabeh.adnani@gmail.com", "0769826471" );
+        System.out.println("The firs account number is: " + roudabehSecondAccount.getAccountNumber());
+
+        BankAccount roudabehThirdAccount = new BankAccount(1001500.51, "Roudabeh Adnani", "rodabeh.adnani@gmail.com", "0769826471" );
+        System.out.println("The firs account number is: " + roudabehThirdAccount.getAccountNumber());
+
+
+        //calling deposit and withdraw methods
+        System.out.println("New balance after deposit: " + roudabehFirstAccount.deposit(8000));
+        System.out.println("New balance after withdraw: " + roudabehFirstAccount.withDraw(100_000));
 
     }
 }
